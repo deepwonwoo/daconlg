@@ -15,8 +15,6 @@ env = custor_Env(args)
 
 # hyper-parameters for RL training
 N_epiosde = 1
-N_steps_per_episode = 2
-
 
 if __name__ == "__main__":
 
@@ -25,6 +23,7 @@ if __name__ == "__main__":
 
         for st in range(env.max_steps):
             action = np.random.randint(10, size=(24, 8))
-            s, r, d, i = env.step(action)
-            print(r)
-            # print(f"submission : {i['submission']} ")
+            state, reward, done, info = env.step(action)
+            # print(state)
+            print(reward)
+            # print(f"submission : {info['submission']} ")
